@@ -1,0 +1,13 @@
+version: '2.3'
+
+services:
+  web:
+    build: 
+      context: ..
+      dockerfile: docker/app.Dockerfile
+    image: web:latest
+    container_name: web
+    ports:
+      - 8000:8000
+    volumes:
+      - ../db.db:/app/db.db
